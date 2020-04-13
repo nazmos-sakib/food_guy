@@ -178,7 +178,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 //---------database insert
     if($flag == 0)
     {
-        require('dataBase.php');
+        require_once('dataBase.php');
 
         $db = new database();
 
@@ -215,7 +215,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   Area:
    <select name = "city_list">
     <?php 
-  require('dataBase.php');
+  require_once('dataBase.php');
 
   $db = new database();
   $result = $db->city_list();
@@ -248,6 +248,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   <br>
   <input type="submit" name="submit" value="Submit">  
 </form>
+
+<p><a href="login.php">login</a></p>
 
 
 </body>

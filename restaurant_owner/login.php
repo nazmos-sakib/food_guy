@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if($flag == 0)
   {
-    require('dataBase.php');
+    require_once('dataBase.php');
 
     $db = new database();
   

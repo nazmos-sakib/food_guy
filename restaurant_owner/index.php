@@ -1,15 +1,22 @@
 <a href="logout.php">logout</a>
 <br><br><br>
 
+
+
 <?php
    ob_start();
    session_start();
+
+   if(isset($_GET['succ_insert_item']))
+   {
+     echo "item inserted successfully";
+   }
 
    if(isset($_SESSION['email']))
    {
    		echo '<br>Wellcome '.$_SESSION['email'];
 
-         require('dataBase.php');
+         require_once('dataBase.php');
 
         $db = new database();
 
@@ -24,19 +31,23 @@
               echo "<tr><td>".$row["restaurant_id"]."</td><td>".$row["restaurant_name"]."</td><td>".$row["restaurant_owner_email"]."</td><td>".$row["address"]."</td><td>".$row["city_id"]."</td></tr>";
           }
           echo "</table>";
-            die();
+            //die();
         }
-        else
-        {
-            $emailErr = "Email alrady exist";
-        }
+        
+?>
 
+
+  <?php
    }
    else
    {
    		header("location:login.php?not_succ=1");
    }
-
    
 ?>
+
+<br><br>
+
+<a href="add_food_item.php">add food item</a>
+
 <br><br>
