@@ -193,6 +193,56 @@ class database
   	}
 
 
+  	function category_list()
+  	{
+  		$sql = "SELECT * FROM $this->table_category";
+		$result = $this->conn->query($sql);
+		return $result;
+
+  	}
+
+  	function extract_restaurant_id($email)
+  	{
+  		$sql = "SELECT restaurant_id FROM $this->table_restaurant_list where restaurant_owner_email ="."'".$email."'";
+		$result = $this->conn->query($sql);
+
+		while($row = $result->fetch_assoc()) 
+	    {
+	      return $row["restaurant_id"];
+	    }
+  	}
+
+  	/*INSERT INTO `food_item` (`food_id`, `food_name`, `category_id`, `sub_category_1_id`, `sub_category_2_id`, `restaurant_id`, `restaurant_owner_email`, `description`, `ingredient`, `price`, `available`, `ts`) VALUES (NULL, '', '', NULL, NULL, '', '', '', NULL, '', '', current_timestamp()) 
+  	*/
+
+  	function insert_food_item($food_name, $category_id, $sub_category_1_id, $restaurant_id, $restaurant_owner_email, $description, $price, $available)
+  	{
+
+  		$sql = "INSERT INTO $this->table_food_item (food_name, category_id, sub_category_1_id, restaurant_id, restaurant_owner_email, description, price, available)
+		VALUES (?,?,?,?,?,?,?,?)";
+
+		// prepare and bind
+		$stmt = $this->conn->prepare($sql);
+		$stmt->bind_param("ssssssss", $foodname, $categoryid, $subcategory1id, $restaurantid, $restaurant_owner_email, $itemdescription, $itemprice, $itemavailable);
+
+		// set parameters and execute
+		$foodname = $food_name;
+		$categoryid = $category_id;
+		$subcategory1id = $sub_category_1_id;
+		$restaurantid = $restaurant_id;
+		$restaurant_owner_email = $restaurant_owner_email;
+		$itemdescription = $description;
+		$itemprice = $price;
+		$itemavailable = $available;
+
+		$stmt->execute();
+
+		//echo "New records created successfully";
+
+		$stmt->close();
+
+  	}
+
 
 
 
