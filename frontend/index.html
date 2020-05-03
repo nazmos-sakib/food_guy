@@ -1,43 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" media="screen and (max-width: 767px)" href="css/mobile.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 </head>
+
 <body>
-    <!-- navigation -->
-    <nav id="main-nav">
-        <div class="container">
-            <h1><a href="#">Food<span>Guy</span></a></h1>
-            <ul>
-                <li><a href="" class="login">Login</a></li>
-                <!-- <li><a href="" class="cart"><img src="img/shopping-cart.svg" alt=""></a></li> -->
-                <li><a href="" class="cart"><ion-icon name="cart-outline"></ion-icon></a></li>
-            </ul>
-        </div>
+
+    <!--Navigation-->
+    <nav class="navbar navbar-light bg-light justify-content-between flex-nowrap flex-row shadow-lg fixed-top">
+        <!-- <div class="navcontainer"> -->
+        <a href="index.html" class="navbar-brand">Food<span class="text-danger">Guy</span></a>
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item">
+                <a href="#" class="nav-link btn btn-outline-danger mr-3 px-2">Login</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link cart" data-toggle="modal" data-target=".bd-example-modal-lg">
+                    <img src="img/shopping-bag.svg" alt="">
+                    <span class="badge badge-pill badge-danger">4</span>
+                </a>
+            </li>
+        </ul>
     </nav>
-    <!-- Showcase -->
-    <header id="showcase">
+
+    <!-- Showcase Section -->
+    <section id="showcase" class="">
         <div class="container">
-            <div class="showcase-container">
-                <div class="showcase-content">
-                    <h1>Online <span> Food Delivery</span> Service</h1>
-                    <p>Dishes from your favorite restaurant will be delivered by a courier in gloves, a mask and an antiseptic.</p>
-                    <div class="search">
-                        <input type="text" placeholder="Type some food name and search">
-                        <button type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-md-10">
+                    <h1>Online <span class="text-danger"> Food Delivery</span> Service</h1>
+                    <p>Dishes from your favorite restaurant will be delivered by a courier in gloves, a mask and an
+                        antiseptic.</p>
+                    <div class="input-group">
+                        <input class="form-control form-control-lg" type="text"
+                            placeholder="Type some food name and search">
+                        <div class="input-group-append">
+                            <button type="submit" class="input-group-text red lighten-3 text-white bg-danger border border-danger"><i
+                                    class="fas fa-search fa-lg text-white px-2"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    </section>
+
+    <!-- Restaurents Page -->
+    <section id="resturent" class="py-5">
+        <div class="container">
+            <h1 class="text-center mb-5">Top Rated Restaurants</h1>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <a href="">
+                        <div class="card shadow-sm">
+                            <div class="offer">25% OFF</div>
+                            <div class="delivery">Free Delivery</div>
+                            <div class="time text-center">30 <br> min</div>
+                            <img src="img/restaurants1.jpg" class="card-img-top" alt="...">
+                            <div class="py-3 px-2">
+                                <div class="d-flex justify-content-between name">
+                                    <p class="rname">The Chillux - Jessore</p>
+                                    <p><i class="fas fa-star"></i>4.7(21)</p>
+                                </div>
+                                <p class="tag mb-2">Burgers, Pizza, Sandwiches, Asian, Beverage</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <a href="">
+                        <div class="card shadow-sm">
+                            <div class="offer">10% OFF</div>
+                            <!-- <div class="delivery">Free Delivery</div> -->
+                            <div class="time text-center">45 <br> min</div>
+                            <img src="img/restaurants2.jpg" class="card-img-top" alt="...">
+                            <div class="py-3 px-2">
+                                <div class="d-flex justify-content-between name">
+                                    <p class="rname">Theater Cafe - Jessore</p>
+                                    <p><i class="fas fa-star"></i>4.3(42)</p>
+                                </div>
+                                <p class="tag mb-2">Rice, Dessert, Snacks, Cakes & Baker</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <a href="">
+                        <div class="card shadow-sm">
+                            <!-- <div class="offer">25% OFF</div> -->
+                            <div class="delivery">Free Delivery</div>
+                            <div class="time text-center">18 <br> min</div>
+                            <img src="img/restaurants3.jpg" class="card-img-top" alt="...">
+                            <div class="py-3 px-2">
+                                <div class="d-flex justify-content-between name">
+                                    <p class="rname">Blue Heaven - Jessore</p>
+                                    <p><i class="fas fa-star"></i>4.1(27)</p>
+                                </div>
+                                <p class="tag mb-2">Coffee, Beverage, Shakes, Cafe</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <p class="text-center mt-4"><a href="#" class="btn btn-danger btn-lg">See All Restaurants</a></p>
+        </div>
+    </section>
+
+    <!-- Resturant Signup  -->
+    <section id="ressign" class="py-5">
+        <div class="container">
+            <h1 class="text-center mb-5">Partners</h1>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="card px-5 py-5">
+                        <h3 class="mb-3">List your restaurant on FoodGuy?</h3>
+                        <p class="pb-3">
+                            Would you like thousands of new customers to taste your amazing food? So would we!
+                            <br><br>
+                            It's simple: we list your menu online, help you process orders, pick them up, and deliver
+                            them to hungry pandas - in a heartbeat!
+                            <br><br>
+                            Interested? Let's start our partnership today!
+                        </p>
+                        <a href="" class="btn btn-danger btn-lg">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Order Items</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1.</th>
+                                <td>Mutton Biryani</td>
+                                <td>BDT 230</td>
+                                <td><input type="number" min="1" max="99" value="2"><a href=""
+                                        class="btn btn-danger btn-sm ml-2">save</a></td>
+                                <td>BDT 460</td>
+                                <td><i class="fas fa-times btn btn-danger"></i></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2.</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3.</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 class="float-right">Total <small>(Incl. VAT)</small>: BDT 700</h5>
+                </div>
+                <div class="modal-footer d-flex justify-content-between">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
+
 </html>
