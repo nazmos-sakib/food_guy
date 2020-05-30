@@ -247,6 +247,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   <br><br>
   <br>
   <input type="submit" name="submit" value="Submit">  
+  <button type="reset" value="Reset">Reset</button>
 </form>
 
 <p><a href="login.php">login</a></p>

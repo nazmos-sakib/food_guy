@@ -197,6 +197,7 @@ Select category of the food:
 	    while($row = $result->fetch_assoc()) 
 	    {
 	      echo "<option value =" .$row["category_id"].">".$row["category_name"]."</option>";
+
 	    }
     ?>
   </select>
@@ -217,6 +218,7 @@ Select second category of the food:(you can live it blank):
 	    {
 	      echo "<option value =" .$row["category_id"].">".$row["category_name"]."</option>";
 	    }
+	    
     ?>
   </select>
    <br><br>
